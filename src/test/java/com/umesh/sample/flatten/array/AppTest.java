@@ -1,5 +1,7 @@
 package com.umesh.sample.flatten.array;
 
+import static org.junit.Assert.assertArrayEquals;
+
 import org.junit.Assert;
 
 import junit.framework.TestCase;
@@ -21,7 +23,7 @@ public class AppTest extends TestCase{
 
     @org.junit.Test
     public void testEmptyArray() throws IllegalArgumentException {
-        Assert.assertArrayEquals(
+        assertArrayEquals(
                 "Testing an empty array",
                 new Integer[]{},
                 App.flatten(new Object[]{})
@@ -30,7 +32,7 @@ public class AppTest extends TestCase{
     
     @org.junit.Test
     public void testFlattenUtility() {
-        Assert.assertArrayEquals(
+        assertArrayEquals(
                 "Testing a flat array",
                 expected,
                 App.flatten(new Object[]{1, 2, 3, 4, 5, 6})
@@ -39,7 +41,7 @@ public class AppTest extends TestCase{
 
     @org.junit.Test
     public void testNestedArray(){
-        Assert.assertArrayEquals(
+        assertArrayEquals(
                 "Testing nested array",
                 expected,
                 App.flatten(new Object[]{1, 2, 3, 4, new Object[]{5, 6}})
@@ -48,7 +50,7 @@ public class AppTest extends TestCase{
 
     @org.junit.Test
     public void testMultipleNestedArrays() {
-        Assert.assertArrayEquals(
+        assertArrayEquals(
                 "Testing multiple nested arrays",
                 expected,
                 App.flatten(new Object[]{1, 2, new Object[]{3, 4, new Object[]{5}, 6}})
